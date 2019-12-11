@@ -23,7 +23,7 @@ deriv exp var = simplify result
           Sum (Product (deriv exp1 var) exp2) (Product (deriv exp2 var) exp1)
         Exponentiation base exponent ->
           Product exponent
-                  (Product (Exponentiation base (Sum exponent (-1)))
+                  (Product (Exponentiation base (Sum exponent (Number (-1))))
                            (deriv base var))
 
 simplify :: Exp -> Exp
